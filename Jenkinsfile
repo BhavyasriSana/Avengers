@@ -98,7 +98,7 @@ pipeline {
         }*/
          stage("Deleting") {
             steps {
-                sh 'curl -u admin:admin -X DELETE http://3.16.33.107:9000/api/projects/AW_2rUbrIXlQ_8oTIpXm'
+                sh 'curl -u admin:admin -X DELETE http://3.16.33.107:9000/api/projects/delete?key=EDN25'
             }
          }
         
