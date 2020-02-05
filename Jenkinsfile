@@ -18,14 +18,15 @@ pipeline {
         
         stage('sonarconnector'){
             steps{
-                //sh 'curl -X GET http://3.16.33.107:9000/api/qualitygates/list'
-                sonarProject(JSON)
-                sonarParticularProject(JSON)
-                sonarQualityGate(JSON)
-                //sh 'curl -X GET http://3.16.33.107:9000/api/qualitygates/list'
+               
+                //sonarProject(JSON)
+                //sonarParticularProject(JSON)
+                //sonarQualityGate(JSON)
+                
                 //sonarGateList()
-                sonarBlockerConditions(JSON)
-                sonarCriticalConditions(JSON)
+                //sonarBlockerConditions(JSON)
+                //sonarCriticalConditions(JSON)
+                sonarDeleteQualityGate()
                 //sonarAssociateProject()
                 log_sonar("Project and QualityGate created successfully")
             }   
