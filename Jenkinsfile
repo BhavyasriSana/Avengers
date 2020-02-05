@@ -44,7 +44,7 @@ pipeline {
                   log_sonar("Data not collected")
                       }
                   }
-        }*/
+        }
         /*stage('Sonar') {
         environment {
            scannerHome=tool 'SonarScanner'
