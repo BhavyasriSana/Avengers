@@ -3,23 +3,23 @@ pipeline {
         lib 'shlib'
     }
     agent any
-    tools {
+    /*tools {
         maven "Maven"   
     } 
     /* environment {
            sonarscanner=tool 'SonarScanner'
        } */
-    stages {
+    /*stages {
         stage('Compile-Build-Test ') {
             steps {
                 sh 'mvn clean package'
             }
-        }
+        }*/
         
         stage('sonarconnector'){
             steps{
                 //sh 'curl -X GET http://3.16.33.107:9000/api/qualitygates/list'
-                sonarProject()
+                sonarProject(JSON)
                 //sonarQualityGate()
                 //sh 'curl -X GET http://3.16.33.107:9000/api/qualitygates/list'
                 //sonarGateList()
