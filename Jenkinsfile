@@ -16,16 +16,16 @@ pipeline {
             }
         }
         
-        /*stage('sonarconnector'){
+        stage('sonarconnector'){
             steps{
                 //sh 'curl -X GET http://3.16.33.107:9000/api/qualitygates/list'
                 sonarProject()
-                sonarQualityGate()
-                sh 'curl -X GET http://3.16.33.107:9000/api/qualitygates/list'
+                //sonarQualityGate()
+                //sh 'curl -X GET http://3.16.33.107:9000/api/qualitygates/list'
                 //sonarGateList()
-                sonarBlockerConditions()
-                sonarCriticalConditions()
-                sonarAssociateProject()
+                //sonarBlockerConditions()
+                //sonarCriticalConditions()
+                //sonarAssociateProject()
                 log_sonar("Project and QualityGate created successfully")
             }   
              post{
@@ -34,7 +34,7 @@ pipeline {
                       }
                   }
              }
-        stage('sonarcollector'){
+        /*stage('sonarcollector'){
             steps{
                 sonarCollector()
                 log_sonar("Data collected successfully")
@@ -96,11 +96,11 @@ pipeline {
           
             }
         }*/
-         stage("Deleting") {
+         /*stage("Deleting") {
             steps {
                 sh 'curl -u admin:admin -X DELETE http://3.16.33.107:9000/api/projects/delete?key=EDN25'
             }
-         }
+         }*/
         
         /*stage('Pushing to Nexus'){
             steps{
