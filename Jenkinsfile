@@ -25,7 +25,7 @@ pipeline {
                 //sh 'curl -X GET http://3.16.33.107:9000/api/qualitygates/list'
                 //sonarGateList()
                 sonarBlockerConditions(JSON)
-                //sonarCriticalConditions()
+                sonarCriticalConditions(JSON)
                 //sonarAssociateProject()
                 log_sonar("Project and QualityGate created successfully")
             }   
