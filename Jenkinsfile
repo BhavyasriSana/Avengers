@@ -34,9 +34,9 @@ pipeline {
                       }
                   }
              }
-        /*stage('sonarcollector'){
+        stage('sonarcollector'){
             steps{
-                sonarCollector()
+                sonarParticularProject()
                 log_sonar("Data collected successfully")
             }  
             post{
