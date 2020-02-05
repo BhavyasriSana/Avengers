@@ -9,8 +9,8 @@ pipeline {
     /* environment {
            sonarscanner=tool 'SonarScanner'
        } */
-    /*stages {
-        stage('Compile-Build-Test ') {
+    stages {
+        /*stage('Compile-Build-Test ') {
             steps {
                 sh 'mvn clean package'
             }
