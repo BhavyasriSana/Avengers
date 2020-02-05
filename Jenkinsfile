@@ -36,7 +36,7 @@ pipeline {
              }
         stage('sonarcollector'){
             steps{
-                sonarParticularProject()
+                sonarParticularProject(JSON)
                 log_sonar("Data collected successfully")
             }  
             post{
