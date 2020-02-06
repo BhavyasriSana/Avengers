@@ -19,15 +19,17 @@ pipeline {
         stage('sonarconnector'){
             steps{
                
-                //sonarProject(JSON)
-                //sonarParticularProject(JSON)
-                //sonarQualityGate(JSON)
+                sonarProject(JSON)
+                sonarParticularProject(JSON)
+                sonarQualityGate(JSON)
                 
-                //sonarGateList()
-                //sonarBlockerConditions(JSON)
-                //sonarCriticalConditions(JSON)
-                sonarDeleteQualityGate()
+                
+                sonarBlockerConditions(JSON)
+                sonarCriticalConditions(JSON)
+                sonarSetAsDefault()
+                //sonarDeleteQualityGate()
                 //sonarAssociateProject()
+                //sonarDeleteProject()
                 log_sonar("Project and QualityGate created successfully")
             }   
              post{
@@ -38,7 +40,9 @@ pipeline {
              }
         /*stage('sonarcollector'){
             steps{
+                sonarGateList()
                 sonarParticularProject(JSON)
+                sonarCollector()
                 log_sonar("Data collected successfully")
             }  
             post{
