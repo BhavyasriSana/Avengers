@@ -19,17 +19,17 @@ pipeline {
         stage('sonarconnector'){
             steps{
                
-                sonarProject(JSON)
-                sonarParticularProject(JSON)
-                sonarQualityGate(JSON)
+                //sonarProject(JSON)
+                //sonarParticularProject(JSON)
+                //sonarQualityGate(JSON)
                 
                 
-                sonarBlockerConditions(JSON)
-                sonarCriticalConditions(JSON)
-                sonarSetAsDefault()
-                //sonarDeleteQualityGate()
+                //sonarBlockerConditions(JSON)
+                //sonarCriticalConditions(JSON)
+                //sonarSetAsDefault()
+                sonarDeleteQualityGate()
                 //sonarAssociateProject()
-                //sonarDeleteProject()
+                sonarDeleteProject()
                 log_sonar("Project and QualityGate created successfully")
             }   
              post{
