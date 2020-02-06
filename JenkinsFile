@@ -115,7 +115,7 @@ pipeline {
                       }
                   }
         }
-    stage("sonarDeleteProject'){
+    stage('sonarDeleteProject'){
             steps{
                 sonarDeleteProject(JSON)
                 log_sonar("Project deleted successfully")
