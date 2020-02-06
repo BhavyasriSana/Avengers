@@ -27,7 +27,7 @@ pipeline {
                 //sonarBlockerConditions(JSON)
                 //sonarCriticalConditions(JSON)
                 //sonarSetAsDefault()
-                sonarDeleteQualityGate()
+                //sonarDeleteQualityGate()
                 //sonarAssociateProject()
                 sonarDeleteProject()
                 log_sonar("Project and QualityGate created successfully")
