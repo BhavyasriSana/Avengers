@@ -7,22 +7,22 @@ pipeline {
             steps{
                 sonarProject(JSON)
                 sonarParticularProject(JSON)
-                log_sonar("Project created successfully",JSON)
+                log_sonar("Project created successfully")
                 }   
              post{
                failure{
-                  log_sonar("Project not created",JSON)
+                  log_sonar("Project not created")
                       }
                   }
              }
     stage('sonarQualityGate'){
             steps{
                 sonarQualityGate(JSON)
-                log_sonar("Quality Gate created successfully",JSON)
+                log_sonar("Quality Gate created successfully")
                 }   
              post{
                failure{
-                  log_sonar("Quality Gate not created",JSON)
+                  log_sonar("Quality Gate not created")
                       }
                   }
              }
@@ -30,99 +30,99 @@ pipeline {
     stage('sonarBlockerConditions'){
             steps{
                 sonarBlockerConditions(JSON)
-                log_sonar("Blocker Conditions created",JSON)
+                log_sonar("Blocker Conditions created")
                 }   
              post{
                failure{
-                  log_sonar("Blocker Conditions not created",JSON)
+                  log_sonar("Blocker Conditions not created")
                       }
                   }
              }
     stage('sonarCriticalConditions'){
             steps{
                 sonarCriticalConditions(JSON)
-                log_sonar("Critical Conditions created",JSON)
+                log_sonar("Critical Conditions created")
                 }   
              post{
                failure{
-                  log_sonar("Critical Conditions not created",JSON)
+                  log_sonar("Critical Conditions not created")
                       }
                   }
              }
     stage('sonarAssociateProject'){
             steps{
                 sonarAssociateProject()
-                log_sonar("Associating project with QualityGate successfully",JSON)
+                log_sonar("Associating project with QualityGate successfully")
                 }   
              post{
                failure{
-                  log_sonar("Associating project with QualityGate not done",JSON)
+                  log_sonar("Associating project with QualityGate not done")
                       }
                   }
              }
     stage('sonarSetAsDefault'){
             steps{
                 sonarSetAsDefault()
-                log_sonar("Default Gate created successfully",JSON)
+                log_sonar("Default Gate created successfully")
                 }   
              post{
                failure{
-                  log_sonar("Default Gate not created",JSON)
+                  log_sonar("Default Gate not created")
                       }
                   }
              }
     stage('sonarcollector'){
             steps{
                 sonarCollector()
-                log_sonar("Data collected successfully",JSON)
+                log_sonar("Data collected successfully")
             }  
             post{
                failure{
-                  log_sonar("Data not collected",JSON)
+                  log_sonar("Data not collected")
                       }
                   }
         }
     stage('sonarParticularProject'){
             steps{
                 sonarParticularProject(JSON)
-                log_sonar("Particular Project Data collected successfully",JSON)
+                log_sonar("Particular Project Data collected successfully")
             }  
             post{
                failure{
-                  log_sonar("Particular Project Data not collected",JSON)
+                  log_sonar("Particular Project Data not collected")
                       }
                   }
         }
     stage('sonarGateList'){
             steps{
                 sonarGateList()
-                log_sonar("Gate List displayed",JSON)
+                log_sonar("Gate List displayed")
             }  
             post{
                failure{
-                  log_sonar("Gate List not displayed",JSON)
+                  log_sonar("Gate List not displayed")
                       }
                   }
         }
     stage('sonarDeleteQualityGate'){
             steps{
                 sonarDeleteQualityGate()
-                log_sonar("QualityGate deleted successfully",JSON)
+                log_sonar("QualityGate deleted successfully")
             }  
             post{
                failure{
-                  log_sonar("QualityGate not deleted ",JSON)
+                  log_sonar("QualityGate not deleted ")
                       }
                   }
         }
     stage("sonarDeleteProject'){
             steps{
                 sonarDeleteProject(JSON)
-                log_sonar("Project deleted successfully",JSON)
+                log_sonar("Project deleted successfully")
             }  
             post{
                failure{
-                  log_sonar("Project not deleted ",JSON)
+                  log_sonar("Project not deleted")
                       }
                   }
         }
