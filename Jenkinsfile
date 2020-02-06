@@ -29,7 +29,7 @@ pipeline {
                 //sonarSetAsDefault()
                 //sonarDeleteQualityGate()
                 //sonarAssociateProject()
-                sonarDeleteProject()
+                sonarDeleteProject(JSON)
                 log_sonar("Project and QualityGate created successfully")
             }   
              post{
