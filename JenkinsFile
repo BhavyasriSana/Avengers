@@ -3,6 +3,7 @@ pipeline {
         lib 'shlib'
     }
     agent any
+    stages{
      stage('sonarProject'){
             steps{
                 sonarProject(JSON)
