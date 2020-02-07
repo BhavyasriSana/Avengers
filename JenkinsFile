@@ -8,31 +8,31 @@ pipeline {
             steps{
                 sonarProject(JSON)
                 sonarParticularProject(JSON)
-                log_sonar("Project created successfully")
+                log("Project created successfully")
                  sonarQualityGate(JSON)
-                log_sonar("Quality Gate created successfully")
+                log("Quality Gate created successfully")
                 sonarBlockerConditions(JSON)
-                log_sonar("Blocker Conditions created")
+                log("Blocker Conditions created")
                 sonarCriticalConditions(JSON)
-                log_sonar("Critical Conditions created")
+                log("Critical Conditions created")
                 sonarAssociateProject()
-                log_sonar("Associating project with QualityGate successfully")
+                log("Associating project with QualityGate successfully")
                 //sonarSetAsDefault()
                 //log_sonar("Default Gate created successfully")
                 sonarCollector()
-                log_sonar("Collected all the data from sonar server successfully")
+                log("Collected all the data from sonar server successfully")
                 sonarParticularProjectData(JSON)
-                log_sonar("Particular Project Data collected successfully")
+                log("Particular Project Data collected successfully")
                  sonarGateList()
-                log_sonar("Gate List displayed")
+                log("Gate List displayed")
                  sonarDeleteQualityGate()
-                log_sonar("QualityGate deleted successfully")
+                log("QualityGate deleted successfully")
                 sonarDeleteProject(JSON)
-                log_sonar("Project deleted successfully")
+                log("Project deleted successfully")
                 }   
              post{
                failure{
-                  log_sonar("Project not created")
+                  log_sonar("Sonarqube failure")
                       }
                   }
              }
