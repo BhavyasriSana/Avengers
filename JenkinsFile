@@ -27,7 +27,7 @@ pipeline {
                 log_function("SONAR","Particular Project Data collected successfully")
                  sonarGateList()
                 log_function("SONAR","Gate List displayed")
-                 sonarDeleteQualityGate()
+                 sonarDeleteQualityGate(JSON)
                 log_function("SONAR","QualityGate deleted successfully")
                 sonarDeleteProject(JSON)
                 log_function("SONAR","Project deleted successfully")
