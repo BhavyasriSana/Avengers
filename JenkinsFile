@@ -17,6 +17,8 @@ pipeline {
                 log_function("SONAR","Critical Conditions created")
                 sonarAssociateProject()
                 log_function("SONAR","Associating project with QualityGate successfully")
+                sonarRemoveAssociation()
+                log_function("SONAR","Removing the Association of a Project from a Quality Gate succesfully")
                 //sonarSetAsDefault()
                 //log_function("SONAR","Default Gate created successfully")
                 sonarCollector()
