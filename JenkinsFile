@@ -8,31 +8,31 @@ pipeline {
             steps{
                 sonarProject(JSON)
                 sonarParticularProject(JSON)
-                log("Project created successfully")
+                log_function("SONAR","Project created successfully")
                  sonarQualityGate(JSON)
-                log("Quality Gate created successfully")
+                log_function("SONAR","Quality Gate created successfully")
                 sonarBlockerConditions(JSON)
-                log("Blocker Conditions created")
+                log_function("SONAR","Blocker Conditions created")
                 sonarCriticalConditions(JSON)
-                log("Critical Conditions created")
+                log_function("SONAR","Critical Conditions created")
                 sonarAssociateProject()
-                log("Associating project with QualityGate successfully")
+                log_function("SONAR","Associating project with QualityGate successfully")
                 //sonarSetAsDefault()
-                //log_sonar("Default Gate created successfully")
+                //log_function("SONAR","Default Gate created successfully")
                 sonarCollector()
-                log("Collected all the data from sonar server successfully")
+                log_function("SONAR","Collected all the data from sonar server successfully")
                 sonarParticularProjectData(JSON)
-                log("Particular Project Data collected successfully")
+                log_function("SONAR","Particular Project Data collected successfully")
                  sonarGateList()
-                log("Gate List displayed")
+                log_function("SONAR","Gate List displayed")
                  sonarDeleteQualityGate()
-                log("QualityGate deleted successfully")
+                log_function("SONAR","QualityGate deleted successfully")
                 sonarDeleteProject(JSON)
-                log("Project deleted successfully")
+                log_function("SONAR","Project deleted successfully")
                 }   
              post{
                failure{
-                  log_sonar("Sonarqube failure")
+                  log_function("Sonarqube failure")
                       }
                   }
              }
