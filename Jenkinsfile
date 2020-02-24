@@ -6,7 +6,7 @@ pipeline {
     stages{
      stage('SONARQUBE'){
             steps{
-                sonarMetricVulnerabilities()
+                sonarMetrics()
             }
             }
             }
