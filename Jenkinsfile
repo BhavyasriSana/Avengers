@@ -6,8 +6,14 @@ pipeline {
     stages{
      stage('SONARQUBE'){
             steps{
-                Metrics(JSON)
-                Score(JSON)
+                script{
+    
+                    String result=Metrics(JSON)
+                    //int pull=gitpullrequest(JSON)
+                    print result
+                    //Score(JSON,result,pull)
+    }
+               
             }
             }
             }
