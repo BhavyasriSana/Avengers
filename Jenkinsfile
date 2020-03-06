@@ -6,7 +6,7 @@ pipeline {
     stages{
      stage('SONARQUBE'){
             steps{
-                sonarMetrics(JSON)
+                Metrics(JSON)
                 SCORE(JSON)
             }
             }
