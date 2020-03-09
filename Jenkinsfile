@@ -11,7 +11,7 @@ pipeline {
                     String result=Metrics(JSON)
                     //int pull=gitpullrequest(JSON)
                     print result
-                    Score(JSON,result)
+                    //Score(JSON,result)
     }
                
             }
