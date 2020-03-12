@@ -1,20 +1,26 @@
 pipeline {
     libraries{
-        lib 'shlib'
+    lib 'shlib'
     }
     agent any
-    stages{
-     stage('SONARQUBE'){
-            steps{
-                script{
-    
-                    String result=Metrics(JSON)
-                    //int pull=gitpullrequest(JSON)
-                    print result
-                    //Score(JSON,result)
+    tools {
+        maven "Maven"   
+    }   
+    environment{
+        sonarscanner = tool 'SonarScanner'
     }
-               
+    stages {
+        stage('Compile-Build-Test ') {
+            steps {
+                sh 'mvn clean package'
             }
+        }
+        stage('SonarQube Analysis'){
+            steps{
+               withSonarQubeEnv('sonarqube'){
+                     sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
+                }
             }
-            }
-            }
+        }
+    }
+}
