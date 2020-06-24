@@ -3,7 +3,15 @@ pipeline {
     lib 'shlib'
     }
     agent any
-    tools {
+    stages {
+        stage('influx'){
+            steps{
+                influx()
+            }
+        }
+    }
+}
+    /*tools {
         maven "Maven"   
     }   
     environment{
