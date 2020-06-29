@@ -6,7 +6,8 @@ pipeline {
     stages {
         stage('influx'){
             steps{
-                influx()
+                //influx()
+                gitrepolist()
             }
         }
     }
