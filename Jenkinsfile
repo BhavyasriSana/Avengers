@@ -9,7 +9,8 @@ pipeline {
                 //influx()
                 //gitrepolist()
                 //gitInflux()
-                influxsonarloop()
+                //influxsonarloop()
+                gitMetrics(JSON)
             }
         }
     }
