@@ -8,7 +8,8 @@ pipeline {
             steps{
                 //influx()
                 //gitrepolist()
-                gitInflux()
+                //gitInflux()
+                influxsonarloop()
             }
         }
     }
