@@ -7,9 +7,9 @@ pipeline {
         stage('influx'){
             steps{
                 
-                //gitInflux(JSON)
-                influxsonarloop(JSON)
-                //gitMetrics(JSON)
+                //influxsonarloop(JSON)
+                gitMetrics(JSON)
+                gitInflux(JSON)
             }
         }
     }
