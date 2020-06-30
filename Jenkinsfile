@@ -8,7 +8,7 @@ pipeline {
             steps{
                 //influx()
                 //gitrepolist()
-                gitInflux()
+                gitInflux(JSON)
                 //influxsonarloop()
                 //gitMetrics(JSON)
             }
